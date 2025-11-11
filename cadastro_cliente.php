@@ -2,7 +2,7 @@
 include 'includes/header.php'; 
 ?>
 
-<h1 class="h3 mb-4 text-gray-800">Cadastro de Cliente</h1>
+<h1 class="h3 mb-4 text-gray-800">Cadastro de Clientes</h1>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">

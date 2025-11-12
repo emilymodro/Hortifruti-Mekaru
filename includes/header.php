@@ -132,7 +132,12 @@ if (isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil'])) {
                     <span>Dashboard</span>
                 </a>
             </li>
-
+            <li class="nav-item">
+                         <a class="nav-link" href="financeiro.php">
+                          <i class="fas fa-fw fa-dollar-sign"></i>
+                          <span>Financeiro</span>
+                         </a>
+                        </li>
             <hr class="sidebar-divider">
 
             <div class="sidebar-heading">

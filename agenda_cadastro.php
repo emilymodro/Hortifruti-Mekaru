@@ -5,12 +5,15 @@ include 'includes/db_connect.php';
 $id = $_GET['id'] ?? null;
 $titulo = "Novo Contato de Serviço";
 $acao = "Cadastrar";
+// ATUALIZAÇÃO: Adicionando chave_pix à array de contato
 $contato = [
     'nome_contato' => '',
     'servico_prestado' => '',
     'telefone_contato' => '',
     'email_contato' => '',
-    'observacoes' => ''
+    'observacoes' => '',
+    'tipo_chave_pix' => '', // NOVO CAMPO: Tipo da Chave PIX
+    'chave_pix' => ''       // NOVO CAMPO: Valor da Chave PIX
 ];
 
 if ($id) {
@@ -60,12 +63,12 @@ $conn->close();
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <label for="nome_contato">Nome / Empresa <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control form-control-user" id="nome_contato" name="nome_contato" 
-                                       value="<?php echo htmlspecialchars($contato['nome_contato']); ?>" required>
+                                        value="<?php echo htmlspecialchars($contato['nome_contato']); ?>" required>
                             </div>
                             <div class="col-sm-6">
                                 <label for="servico_prestado">Serviço Principal <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control form-control-user" id="servico_prestado" name="servico_prestado"
-                                       value="<?php echo htmlspecialchars($contato['servico_prestado']); ?>" placeholder="Ex: Eletricista, Encanador" required>
+                                        value="<?php echo htmlspecialchars($contato['servico_prestado']); ?>" placeholder="Ex: Eletricista, Encanador" required>
                             </div>
                         </div>
 
@@ -73,20 +76,39 @@ $conn->close();
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <label for="telefone_contato">Telefone</label>
                                 <input type="text" class="form-control form-control-user" id="telefone_contato" name="telefone_contato"
-                                       value="<?php echo htmlspecialchars($contato['telefone_contato']); ?>" placeholder="Ex: (99) 99999-9999">
+                                        value="<?php echo htmlspecialchars($contato['telefone_contato']); ?>" placeholder="Ex: (99) 99999-9999">
                                 <small class="text-muted">Formato opcional</small>
                             </div>
                             <div class="col-sm-6">
                                 <label for="email_contato">E-mail</label>
                                 <input type="email" class="form-control form-control-user" id="email_contato" name="email_contato"
-                                       value="<?php echo htmlspecialchars($contato['email_contato']); ?>" placeholder="email@exemplo.com">
+                                        value="<?php echo htmlspecialchars($contato['email_contato']); ?>" placeholder="email@exemplo.com">
                             </div>
                         </div>
-
+                        
+                        <h5 class="mt-4 mb-3 text-gray-900">Informações de Pagamento (PIX)</h5>
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label for="tipo_chave_pix">Tipo de Chave</label>
+                                <select class="form-control" id="tipo_chave_pix" name="tipo_chave_pix">
+                                    <option value="">Nenhum</option>
+                                    <option value="CPF" <?php if ($contato['tipo_chave_pix'] == 'CPF') echo 'selected'; ?>>CPF</option>
+                                    <option value="CNPJ" <?php if ($contato['tipo_chave_pix'] == 'CNPJ') echo 'selected'; ?>>CNPJ</option>
+                                    <option value="Email" <?php if ($contato['tipo_chave_pix'] == 'Email') echo 'selected'; ?>>E-mail</option>
+                                    <option value="Telefone" <?php if ($contato['tipo_chave_pix'] == 'Telefone') echo 'selected'; ?>>Telefone</option>
+                                    <option value="Aleatoria" <?php if ($contato['tipo_chave_pix'] == 'Aleatoria') echo 'selected'; ?>>Chave Aleatória</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-8">
+                                <label for="chave_pix">Valor da Chave PIX</label>
+                                <input type="text" class="form-control form-control" id="chave_pix" name="chave_pix"
+                                        value="<?php echo htmlspecialchars($contato['chave_pix']); ?>" placeholder="Insira o valor da chave PIX">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="observacoes">Observações / Detalhes</label>
                             <textarea class="form-control" id="observacoes" name="observacoes" rows="4" 
-                                      placeholder="Anotações importantes sobre a pessoa, valor médio de serviço, ou melhores horários para contato."><?php echo htmlspecialchars($contato['observacoes']); ?></textarea>
+                                        placeholder="Anotações importantes sobre a pessoa, valor médio de serviço, ou melhores horários para contato."><?php echo htmlspecialchars($contato['observacoes']); ?></textarea>
                         </div>
                         
                         <div class="form-group pt-3">

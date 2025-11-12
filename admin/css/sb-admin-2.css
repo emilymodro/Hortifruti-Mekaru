@@ -11,27 +11,40 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
---blue: #1A531A; /* MODIFICADO: Antigo #4e73df. Novo Verde Escuro Principal */
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #e74a3b;
-  --orange: #fd7e14;
-  --yellow: #f6c23e;
-  --green: #5CB85C; /* MODIFICADO: Antigo #1cc88a. Novo Verde Claro de Destaque */
-  --teal: #20c9a6;
-  --cyan: #36b9cc;
+  /* ======================================= */
+  /* CORES PRINCIPAIS (TEMA HORTIFRUTI) */
+  /* ======================================= */
+  --blue: #1E8449;        /* VERDE TERRA ESCURO (Para elementos primários) */
+  --indigo: #6610f2;      /* (Manter) */
+  --purple: #6f42c1;      /* (Manter) */
+  --pink: #e83e8c;        /* (Manter) */
+  --red: #C0392B;         /* VERMELHO SÓLIDO (Para Erros/Perigo/Frutas Vermelhas) */
+  --orange: #E67E22;      /* LARANJA CÍTRICO (Para Alerta/Warning) */
+  --yellow: #F1C40F;      /* AMARELO VIVO (Para Alerta/Destaque) */
+  --green: #2ECC71;       /* VERDE CLARO BRILHANTE (Frescor/Destaque de Sucesso) */
+  --teal: #20c9a6;        /* (Manter) */
+  --cyan: #36b9cc;        /* (Manter) */
   --white: #fff;
-  --gray: #858796;
-  --gray-dark: #5a5c69;
-  --primary: #1A531A; /* MODIFICADO: Antigo #4e73df. Novo Verde Escuro Principal */
-  --secondary: #858796;
-  --success: #5CB85C; /* MODIFICADO: Antigo #1cc88a. Novo Verde Claro de Destaque (Botões Novo/Sucesso) */
-  --info: #36b9cc; /* Manter 'info' para cores neutras/secundárias (badges) */
-  --warning: #f6c23e;
-  --danger: #e74a3b;
-  --light: #f8f9fc;
-  --dark: #5a5c69;
+  
+  /* Cores Neutras */
+  --gray: #95A5A6;        /* Cinza Médio */
+  --gray-dark: #34495E;    /* Cinza Escuro (Texto Principal) */
+
+  /* ======================================= */
+  /* VARIÁVEIS DE TEMA (Bootstrap) */
+  /* ======================================= */
+  --primary: #1E8449;      /* PRINCIPAL: Verde Terra (Natureza/Base) */
+  --secondary: #95A5A6;    /* SECUNDÁRIO: Cinza Neutro */
+  --success: #2ECC71;      /* SUCESSO: Verde Claro Brilhante (Frescor/Novo Item) */
+  --info: #3498DB;         /* INFO: Azul Padrão (Manter para badges/informação) */
+  --warning: #F1C40F;      /* AVISO: Amarelo Cítrico (Destaque) */
+  --danger: #C0392B;       /* PERIGO: Vermelho (Exclusão/Erros) */
+  --light: #ECF0F1;        /* LIGHT: Cinza Quase Branco */
+  --dark: #34495E;         /* DARK: Cinza Escuro */
+
+  /* ======================================= */
+  /* BREAKPOINTS e FONTES */
+  /* ======================================= */
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -40,7 +53,6 @@
   --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-
 *,
 *::before,
 *::after {

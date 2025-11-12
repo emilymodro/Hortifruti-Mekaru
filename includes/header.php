@@ -140,6 +140,9 @@ if (isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil'])) {
                         </li>
             <hr class="sidebar-divider">
 
+                        <div class="sidebar-heading">
+                            Relatórios e Utilitários
+                        </div>
             <div class="sidebar-heading">
                 Gestão
             </div>
